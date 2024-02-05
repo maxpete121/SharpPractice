@@ -24,4 +24,9 @@ public class CatsRepository{
         FAKEDB.Add(catData);
         return catData;
     }
+
+    internal void DeleteCat(string catId){
+        int indexToRemove = FAKEDB.FindIndex(cat => cat.Id == catId);
+        FAKEDB.RemoveAt(indexToRemove);
+    }
 }

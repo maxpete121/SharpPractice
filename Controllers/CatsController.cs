@@ -52,17 +52,17 @@ public class CatsController : ControllerBase{
         }
     }
 
-    // [HttpDelete("{catId}")]
-    // public ActionResult<string> DeleteCat(string catId){
-    //     try
-    //     {
-    //         string message = catService.DeleteCat(catId);
-    //         return Ok(message);
-    //     }
-    //     catch (Exception)
-    //     {
+    [HttpDelete("{catId}")]
+    public ActionResult<string> DeleteCat(string catId){
+        try
+        {
+            string message = catService.DeleteCat(catId);
+            return Ok(message);
+        }
+        catch (Exception)
+        {
             
-    //         throw;
-    //     }
-    // }
+            throw;
+        }
+    }
 }

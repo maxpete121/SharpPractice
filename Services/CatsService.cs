@@ -18,7 +18,9 @@ public class CatService(CatsRepository repo){
         return cats;
     }
 
-    // internal string DeleteCat(string catId){
-    //     Cats catToRemove = 
-    // }
+    internal string DeleteCat(string catId){
+        Cats catToRemove = GetCatById(catId);
+        repo.DeleteCat(catId);
+        return "Cat adopted";
+    }
 }
