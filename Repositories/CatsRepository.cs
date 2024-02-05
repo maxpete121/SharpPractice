@@ -1,3 +1,5 @@
+using Microsoft.Extensions.ObjectPool;
+
 namespace SharpPractice.Repositories;
 
 public class CatsRepository{
@@ -11,5 +13,15 @@ public class CatsRepository{
 
     internal List<Cats> GetCats(){
         return FAKEDB;
+    }
+
+    internal Cats GetCatById(string catId){
+        Cats cat = FAKEDB.Find(cat => cat.Id == catId);
+        return cat;
+    }
+
+    internal Cats CreateCat(Cats catData){
+        FAKEDB.Add(catData);
+        return catData;
     }
 }
